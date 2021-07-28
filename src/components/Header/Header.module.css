@@ -6,7 +6,6 @@
 	width: 100%;
 	height: 100px;
 	background: linear-gradient(45deg, rgb(15, 12, 43) 14%, rgb(102, 22, 103), rgb(7, 7, 54));
-	border-radius: 0 0 20px 20px;
 }
 
 .header .logo {
@@ -47,6 +46,7 @@
 	cursor: pointer;
 	color: #10dbba;
 }
+
 .login a:active {
 	font-size: 22px;
 	color: #5050e2;
@@ -60,14 +60,15 @@
 	display: none;
 	position: absolute;
 	top: 43px;
+	right: -20px;
 	text-align: center;
 	font-size: 25px;
-	width:250px;
+	width: 250px;
 	color: black;
 	padding: 20px;
 }
 
-.exit button{
+.exit button {
 	width: 150px;
 	height: 50px;
 	background-color: #5e7ebf;
@@ -76,6 +77,6 @@
 	border-radius: 5px;
 }
 
-.exit button:active{
+.exit button:active {
 	background-color: #0b3389;
 }

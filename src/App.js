@@ -6,6 +6,7 @@ import Setting from "./components/Setting/Setting";
 import Footer from "./components/Footer/Footer";
 // import Dialogs from "./components/Dialogs/Dialogs";
 // import UsersContainer from "./components/UsersAll/UsersContainer";
+import StartPage from './components/StartPage/StartPage'
 import FriendsContainer from "./components/Friends/FriendsContainer";
 import NavContainer from "./components/Nav/NavContainer";
 import {Route, Switch, withRouter} from "react-router-dom";
@@ -37,6 +38,7 @@ function App(props) {
 			<div className="main">
 				<NavContainer/>
 				<Switch>
+					<Route exact path='/' render={() => <StartPage/>}/>
 					<Route path='/dialogs' render={() => withSuspense(Dialogs)}/>
 					<Route path='/usersAll' render={() => withSuspense(UsersContainer)}/>
 					<Route path='/login' render={() => <Login/>}/>
