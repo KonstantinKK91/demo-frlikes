@@ -1,0 +1,23 @@
+.status {
+    font-size: 20px;
+    margin-top: 10px;
+    word-break: break-all;
+    padding-right: 30px;
+    line-height: 30px;
+    color: #520c47;
+    font-weight: normal;
+}
+
+.status:hover {
+    cursor: auto;
+    color: #4958d8;
+}
+
+.input {
+    display: block;
+    margin-top: 10px;
+    font-size: 17px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid black;
+}

@@ -1,0 +1,8 @@
+.section__info {
+	background: rgb(245, 220, 243);
+	display: grid;
+	grid-template-columns: 3fr 300fr;
+	height: 500px;
+	border-bottom: 10px solid rgb(247, 186, 239);
+}
+

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 90px;
+	background: rgb(247, 186, 239);
+}
+
+
+.title {
+	align-self: center;
+	color: rgb(15, 12, 43);
+	font-size: 17px;
+	font-family: 'Acme', sans-serif;
+}

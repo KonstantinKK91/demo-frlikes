@@ -1,0 +1,11 @@
+.section__foto {
+	border-right: 10px solid rgb(247, 186, 239);
+	padding: 10px;
+	width: 383px;
+}
+
+.section__foto img {
+	width: 100%;
+	height: 100%;
+	border: 2px solid black;
+}

@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+.main__content {
+	font-family: 'Merriweather', serif;
+	border-top: 10px solid rgb(247, 186, 239);
+}
+
+.items {
+	display: grid;
+	grid-template-columns: 3fr 300fr;
+}

@@ -1,0 +1,56 @@
+.section {
+	background-color: #f5dcf3;
+	border-top: 10px solid rgb(247, 186, 239);
+	padding: 20px;
+}
+
+.input {
+	width: 320px;
+	background-color: white;
+	border: 1px solid gray;
+	margin-bottom: 20px;
+}
+
+.input input {
+	padding: 3px;
+	width: 300px;
+	height: 30px;
+}
+
+.input span {
+	color: grey;
+}
+
+.info {
+	display: grid;
+	grid-template-columns: 1fr 10fr 3fr;
+	margin-top: 10px;
+	padding: 10px 0 3px 0;
+	border-top: 1px solid #f7baef;
+}
+
+.photo {
+	width: 150px;
+	height: 150px;
+	margin-right: 10px;
+}
+
+.photo img {
+	width: 100%;
+	height: 100%;
+}
+
+.name {
+	font-size: 20px;
+	font-weight: bold;
+	color: #1f2361;
+}
+
+.actions {
+	font-family: Lato;
+	font-size: 16px;
+}
+
+.actions p {
+	margin-bottom: 15px;
+}

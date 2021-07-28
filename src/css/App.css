@@ -1,0 +1,21 @@
+body {
+	background-color: rgb(247, 186, 239);
+	hyphens: auto;
+}
+
+.app-wrapper {
+	height: 100vh;
+	max-width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	display: grid;
+	grid-template-columns: 3fr 9fr;
+	margin: 0 15px 0 15px;
+	flex-grow: 1;
+}
+
+

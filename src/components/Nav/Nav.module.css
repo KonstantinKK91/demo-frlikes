@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuggles&family=Lato&display=swap');
+
+.main__nav {
+	background: rgb(245, 220, 243);
+	padding: 25px 0 20px 25px;
+	border-right: 10px solid rgb(247, 186, 239);
+	border-top: 10px solid rgb(247, 186, 239);
+	font-family: 'Lato', sans-serif;
+	/*max-height: 890px;*/
+	flex-grow: 0;
+}
+
+.main__nav li {
+	margin-bottom: 20px;
+}
+
+.main__nav li {
+	margin-bottom: 30px;
+}
+
+.main__nav li:last-child {
+	margin-top: 80px;
+}
+
+.main__nav a {
+	font-size: 20px;
+	color: rgb(133, 5, 110);
+}
+
+.main__nav a:hover {
+	font-size: 20px;
+	color: #f0a6e1;
+}
+
+a.active {
+	font-size: 22px;
+	color: #2937ac;
+}
+
+.items {
+	display: flex;
+}
+
+.items p {
+	flex: 0 1 15%;
+}
+
+.items span {
+	flex: 0 1 85%;
+}
+

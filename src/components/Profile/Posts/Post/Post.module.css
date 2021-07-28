@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuggles&family=Lato&display=swap');
+
+.wrapper {
+	background: rgb(245, 220, 243);
+	border-bottom: 10px solid rgb(247, 186, 239);
+	font-family: 'Lato', sans-serif;
+}
+
+.wrapper:last-child {
+	background: rgb(245, 220, 243);
+	border-bottom: none;
+}
+
+.container {
+	max-width: 900px;
+	padding: 10px 20px 7px 20px;
+}
+
+.image {
+	display: flex;
+	align-items: center;
+	margin: 15px;
+	border-bottom: 1px solid #ecb6e5;
+	padding-bottom: 15px;
+}
+
+.image .name {
+	padding-left: 10px;
+	font-size: 20px;
+}
+
+.image img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+.post {
+	padding: 15px 20px 15px 20px;
+	font-size: 16px;
+	line-height: 25px;
+	word-wrap: break-word;
+}
+
+
+.like {
+	font-weight: bold;
+	font-size: 20px;
+	padding: 30px 0px 20px 20px;
+}
+
+.like .count_like {
+	margin-left: 10px;
+	color: red;
+	font-size: 16px;
+}
+
+.like .icon {
+	color: #9f3d92;
+}
+.like .icon:hover {
+	cursor: pointer;
+	color: #9f3d92;
+}
