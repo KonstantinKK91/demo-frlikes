@@ -10,7 +10,7 @@ import StartPage from './components/StartPage/StartPage'
 import FriendsContainer from "./components/Friends/FriendsContainer";
 import NavContainer from "./components/Nav/NavContainer";
 import {Route, Switch, withRouter} from "react-router-dom";
-import ProfileContainer from "./components/Profile/ProfileContainer";
+import ProfileContainer from "./components/Profile/ProfileContainerWithHooks";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import * as React from "react";

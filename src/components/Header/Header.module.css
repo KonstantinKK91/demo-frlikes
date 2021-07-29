@@ -59,7 +59,6 @@
 .exit {
 	display: none;
 	position: absolute;
-	top: 43px;
 	right: -20px;
 	text-align: center;
 	font-size: 25px;

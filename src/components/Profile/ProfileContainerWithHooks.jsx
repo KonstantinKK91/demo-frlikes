@@ -7,28 +7,27 @@ import {withAuthRedirect} from "../HOC/withAuthRedirect";
 import {compose} from "redux";
 import {dataPost, personData, statusSelector} from "../../selectors/profileSelectors";
 import {authUserIdSelector, isAuth} from "../../selectors/authSelectors";
+import {useEffect} from "react";
 
+function ProfileContainer(props) {
 
-class ProfileContainer extends React.Component {
-	componentDidMount() {
-		let userId = this.props.match.params.userId;//props from withRouter
+	useEffect(()=>{
+		let userId = props.match.params.userId;//props from withRouter
 		if (!userId) {
-			userId = this.props.userId;
-			if(!userId) this.props.history.push('/login')
-		}
-		this.props.profileAPIThunk(userId)
-		this.props.setStatusThunk(userId)
+		userId = props.userId;
+		if(!userId) props.history.push('/login')
 	}
+	props.profileAPIThunk(userId)
+	props.setStatusThunk(userId)
+	},[props.match.params.userId,props.userId])
 
-	render() {
-		return (
-			<Profile updateStatusThunk={this.props.updateStatusThunk}
-			         status={this.props.status}
-			         profile={this.props.profile}
-			         addPost={this.props.addPost}
-			         dataPost={this.props.dataPost}
-			/>)
-	}
+	return (
+		<Profile updateStatusThunk={props.updateStatusThunk}
+		         status={props.status}
+		         profile={props.profile}
+		         addPost={props.addPost}
+		         dataPost={props.dataPost}
+		/>)
 }
 
 let mapStateToProps = (state) => {
