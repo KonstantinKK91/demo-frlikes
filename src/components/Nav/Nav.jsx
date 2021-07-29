@@ -16,7 +16,7 @@ function Links(props) {
 }
 //map state from reducerNav and renders to the Links component
 function Nav(props) {
-	let link = props.store.map(i => <Links url={i.url} icon={i.icon} item={i.item}/>)
+	let link = props.store.map(i => <Links key={i.id} url={i.url} icon={i.icon} item={i.item}/>)
 	return (
 		<nav className={cl.main__nav}>
 			<ul>

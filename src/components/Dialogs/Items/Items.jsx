@@ -12,7 +12,7 @@ function DialogsItems(props) {
 }
 //===============================================================
 function Items(props) {
-	let dialogsMap = props.state.map(d => <DialogsItems name={d.name} id={d.id} img={d.img}/>)
+	let dialogsMap = props.state.map(d => <DialogsItems key={d.id} name={d.name} id={d.id} img={d.img}/>)
 	return (
 		<div className={cl.dialogs__items}>
 			{dialogsMap}

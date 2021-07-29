@@ -11,6 +11,7 @@ function Profile(props) {
 			<div className={cl.main__section}>
 				<Info updateStatusThunk={props.updateStatusThunk}
 				      updatePhotoThunk={props.updatePhotoThunk}
+				      updateProfileThunk={props.updateProfileThunk}
 				      status={props.status}
 				      profile={props.profile}
 				      isOwnProfile = {props.isOwnProfile}

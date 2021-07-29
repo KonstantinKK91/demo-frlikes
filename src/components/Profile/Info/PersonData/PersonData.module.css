@@ -1,24 +1,84 @@
+.wrapper__info {
+	position: relative;
+}
+
+/*=================PersonDataInfo style=====================================*/
 .section__data {
-    flex: 0 1 75%;
+	flex: 0 1 75%;
 }
 
 .section__name {
-    font-size: 30px;
-    font-weight: bolder;
-    color: rgb(64, 64, 64);
-    margin: 20px 0 40px 30px;
+	font-size: 30px;
+	font-weight: bolder;
+	color: rgb(64, 64, 64);
+	margin: 20px 0 40px 30px;
 }
 
 .section__data p {
-    font-size: 17px;
-    color: rgb(64, 64, 64);
-    font-weight: bold;
-    margin: 0px 0 20px 30px;
+	font-size: 17px;
+	color: rgb(64, 64, 64);
+	font-weight: bold;
+	margin: 0px 0 10px 30px;
 }
 
 .section__data p span {
-    font-size: 15px;
-    font-weight: normal;
-    color: rgb(64, 64, 64);
+	font-size: 15px;
+	font-weight: normal;
+	color: rgb(64, 64, 64);
+}
+
+.edit button{
+	background-color: #f5dcf3;
+	color: #34093c;
+	font-size: 20px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.edit button:hover{
+	background-color: #f5dcf3;
+	color: #5853de;
+}
+
+/*=================PersonDataEditMode style=====================================*/
+form  {
+	padding: 20px;
+	font-size: 16px;
+	color: #580b5d;
+}
+form label {
+	margin-right: 10px;
+}
+
+form div {
+	border-bottom: 1px solid #e134e6;
+	padding: 5px;
+}
+form input  {
+	border: 1px solid #e134e6;
+	padding: 2px;
+}
+.aboutMe {
+	display: flex;
+	align-items: center;
+}
+.aboutMe textarea{
+	resize: none;
+	border: 1px solid #e134e6;
+}
+
+.contacts {
+	margin: 7px 0 8px 20px;
+}
+
+.buttonForm {
+	color: white;
+	background-color: #540d56;
+	width: 120px;
+	height: 30px;
+	margin-top: 30px;
+	border-radius: 5px;
+	margin-left: 40%;
 }
 

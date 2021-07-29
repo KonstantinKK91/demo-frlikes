@@ -22,7 +22,7 @@ const Item = (props) => {
 
 //====Renders an Item and a map of friends from reducerFriends to the component + block search======
 const Friends = (props) => {
-	let friends = props.friendsCount.map(f => <Item img={f.img} name={f.name}/>)
+	let friends = props.friendsCount.map(f => <Item key={f.id} img={f.img} name={f.name}/>)
 	return (
 		<div className={cl.section}>
 			<div className={cl.input}>

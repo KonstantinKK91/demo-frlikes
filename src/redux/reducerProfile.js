@@ -81,4 +81,14 @@ export const updatePhotoThunk = (file) => {
 	}
 }
 
+//Request to put profile
+export const updateProfileThunk = (profile) => {
+	return async (dispatch) => {
+		let response = await profileAPI.updateProfile(profile);
+		if (response.data.resultCode === 0) {
+			debugger;
+		}
+	}
+}
+
 export default reducerProfile;

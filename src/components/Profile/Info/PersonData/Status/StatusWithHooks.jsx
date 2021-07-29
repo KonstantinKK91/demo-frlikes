@@ -26,7 +26,7 @@ const StatusWithHooks = (props) => {
 		setStatus(props.status);
 	}, [props.status])
 
-	return <>
+	return <div>
 		{editStatus
 			? <input onChange={onChangeStatus}
 			         maxLength={300}
@@ -39,7 +39,7 @@ const StatusWithHooks = (props) => {
 			       className={cl.status}>{props.status || 'add your status...'}
 			</div>
 		}
-	</>
+	</div>
 
 }
 

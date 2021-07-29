@@ -1,7 +1,7 @@
 import * as React from "react";
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {addPostAC, profileAPIThunk, setStatusThunk, updateStatusThunk,updatePhotoThunk} from "../../redux/reducerProfile";
+import {addPostAC, profileAPIThunk, setStatusThunk, updateStatusThunk,updatePhotoThunk,updateProfileThunk} from "../../redux/reducerProfile";
 import {withRouter} from "react-router-dom";
 import {withAuthRedirect} from "../HOC/withAuthRedirect";
 import {compose} from "redux";
@@ -25,6 +25,7 @@ function ProfileContainer(props) {
 	return (
 		<Profile updateStatusThunk={props.updateStatusThunk}
 		         updatePhotoThunk={props.updatePhotoThunk}
+		         updateProfileThunk={props.updateProfileThunk}
 		         status={props.status}
 		         profile={props.profile}
 		         addPost={props.addPost}
@@ -50,7 +51,8 @@ export default compose(connect(mapStateToProps, {
 		setStatusThunk,
 		updateStatusThunk,
 		addPost: addPostAC,
-		updatePhotoThunk
+		updatePhotoThunk,
+		updateProfileThunk
 	}),
 	withAuthRedirect,
 	withRouter)(ProfileContainer)

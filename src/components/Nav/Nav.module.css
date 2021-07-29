@@ -6,8 +6,8 @@
 	border-right: 10px solid rgb(247, 186, 239);
 	border-top: 10px solid rgb(247, 186, 239);
 	font-family: 'Lato', sans-serif;
-	/*max-height: 890px;*/
 	flex-grow: 0;
+	/*width: 350px;*/
 }
 
 .main__nav li {

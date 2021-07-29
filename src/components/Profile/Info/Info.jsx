@@ -11,7 +11,10 @@ function Info(props) {
 			/>
 			<PersonData updateStatusThunk={props.updateStatusThunk}
 			            status={props.status}
-			            profile={props.profile}/>
+			            profile={props.profile}
+			            isOwnProfile = {props.isOwnProfile}
+			            updateProfileThunk={props.updateProfileThunk}
+			/>
 		</div>
 	)
 }

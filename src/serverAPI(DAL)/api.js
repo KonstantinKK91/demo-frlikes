@@ -32,7 +32,10 @@ export const profileAPI = {
 				'Content-Type': 'multipart/form-data'
 			}
 		})
-	}
+	},
+	updateProfile(profile){
+		return instance.put(`profile`,profile);
+	},
 
 }
 //api request: https://social-network.samuraijs.com/api/1.0/follow

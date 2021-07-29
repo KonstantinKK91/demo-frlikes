@@ -1,30 +1,31 @@
 import cl from './PersonData.module.css';
 import Preloader from "../../../common/Preloader/Preloader";
-import {faThumbsUp} from "@fortawesome/free-solid-svg-icons";
+import {faThumbsUp, faEdit} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import StatusWithHooks from "./Status/StatusWithHooks";
-
+import PersonDataInfo from './PersonDataInfo';
+import PersonDataEditForm from './PersonDataEditForm';
+import {useState} from "react";
 
 function PersonData(props) {
 
-	//If the data is not loaded or will show Preloader
-	if (!props.profile) {
-		return <Preloader/>
+	const [editMode, setEditMode] = useState(false)
+	const onSubmit = formData => {
+	props.updateProfileThunk(formData);
+	setEditMode(false)
 	}
 
 	return (
-		<div>
-			<div className={cl.section__name}>
-				{props.profile.fullName}
-				<StatusWithHooks updateStatusThunk={props.updateStatusThunk} status={props.status}/>
-			</div>
+		<div className={cl.wrapper__info}>
+			{editMode
+				? <PersonDataEditForm initialValues={props.profile} onSubmit={onSubmit}/>
+				: <PersonDataInfo updateStatusThunk={props.updateStatusThunk}
+				                  status={props.status}
+				                  profile={props.profile}
+				                  isOwnProfile={props.isOwnProfile}
+				                  setEditMode={setEditMode}
+				/>}
 
-			<div className={cl.section__data}>
-				<p>About Me: <span>{props.profile.aboutMe ? props.profile.aboutMe : 'no information'}</span></p>
-				<p>looking for a job: <span>{props.profile.lookingForAJob ? <FontAwesomeIcon icon={faThumbsUp}/> : 'no information'}</span></p>
-				<p>facebook: <span>{props.profile.contacts.facebook ? props.profile.contacts.facebook : 'no information'}</span></p>
-				<p>vk: <span>{props.profile.contacts.vk ? props.profile.contacts.vk : 'no information'}</span></p>
-			</div>
 		</div>
 	)
 }
