@@ -6,6 +6,8 @@ import StatusWithHooks from "./Status/StatusWithHooks";
 
 
 function PersonData(props) {
+
+	//If the data is not loaded or will show Preloader
 	if (!props.profile) {
 		return <Preloader/>
 	}

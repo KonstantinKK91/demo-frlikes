@@ -6,6 +6,8 @@ import {HashRouter} from "react-router-dom";
 import store from "./redux/reduxStore";
 import {Provider} from "react-redux";
 
+//HashRouter is used to make the app work properly on GitHub page
+// Provider is used to implement the Context api
 ReactDOM.render(
 	<React.StrictMode>
 		<HashRouter>

@@ -20,6 +20,7 @@ let reducers = combineReducers({
 	app: reducerApp
 })
 
+//Configuring the Redux Extension for Chrome
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddleware)));
 
@@ -27,4 +28,3 @@ const store = createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddle
 
 export default store;
 
-window.store = store.getState();

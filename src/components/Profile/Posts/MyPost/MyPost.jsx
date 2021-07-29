@@ -10,7 +10,6 @@ function MyPost(props) {
 		props.addPost(formData.post)
 	}
 
-
 	return (
 		<div className={cl.wrapper}>
 			<form onSubmit={props.handleSubmit(onSubmit)}>

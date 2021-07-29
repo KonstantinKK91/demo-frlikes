@@ -3,6 +3,7 @@ import {profileAPI} from "../serverAPI(DAL)/api";
 const TYPE_ADD_POST = "ADD-POST";
 const TYPE_SET_USERS_PROFILE = 'TYPE-USERS-PROFILE';
 const TYPE_SET_STATUS = 'SET-STATUS';
+const TYPE_SET_PHOTO = 'SET-PHOTO';
 
 let initialState = {
 	dataPost: [],
@@ -31,6 +32,11 @@ const reducerProfile = (state = initialState, action) => {
 				...state,
 				status: action.status
 			}
+		case TYPE_SET_PHOTO:
+			return {
+				...state,
+				personData: {...state.personData, photos:action.photos}
+			}
 		default:
 			return state;
 	}
@@ -39,7 +45,9 @@ const reducerProfile = (state = initialState, action) => {
 export let addPostAC = (post) => ({type: TYPE_ADD_POST, post});
 export let setUsersProfileAC = (profile) => ({type: TYPE_SET_USERS_PROFILE, profile});
 export let setStatusAC = (status) => ({type: TYPE_SET_STATUS, status});
+export let setPhotoAC = (photos) => ({type: TYPE_SET_PHOTO, photos});
 
+//Request to get user data by id
 export const profileAPIThunk = (userId) => {
 	return async (dispatch) => {
 		let response = await profileAPI.getProfileData(userId);
@@ -47,6 +55,7 @@ export const profileAPIThunk = (userId) => {
 	}
 }
 
+//Request to get user status by id
 export const setStatusThunk = (userId) => {
 	return async (dispatch) => {
 		let response = await profileAPI.getStatus(userId);
@@ -54,10 +63,21 @@ export const setStatusThunk = (userId) => {
 	}
 }
 
+//Request to put user status
 export const updateStatusThunk = (status) => {
 	return async (dispatch) => {
 		let response = await profileAPI.updateStatus(status);
 		if (response.data.resultCode === 0) dispatch(setStatusAC(status));
+	}
+}
+
+//Request to put user photo
+export const updatePhotoThunk = (file) => {
+	return async (dispatch) => {
+		let response = await profileAPI.updatePhoto(file);
+		if (response.data.resultCode === 0) {
+			dispatch(setPhotoAC(response.data.data.photos));
+		}
 	}
 }
 

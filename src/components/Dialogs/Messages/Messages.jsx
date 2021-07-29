@@ -3,7 +3,7 @@ import React from "react";
 import { Field, reduxForm } from 'redux-form'
 import {minLength1, required} from "../../../validationForms/validation";
 
-//=====Component create block with messages====================
+//=====Component return block with messages====================
 function PersonMessage(props) {
 	return (
 		<div className={cl.message}>

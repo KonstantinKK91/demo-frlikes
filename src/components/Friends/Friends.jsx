@@ -2,6 +2,7 @@ import cl from './Friends.module.css'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
 
+//====Return a block with information about a friend in the Friends component=======
 const Item = (props) => {
 	return (
 		<div className={cl.info}>
@@ -19,9 +20,8 @@ const Item = (props) => {
 	)
 }
 
-
+//====Renders an Item and a map of friends from reducerFriends to the component + block search======
 const Friends = (props) => {
-
 	let friends = props.friendsCount.map(f => <Item img={f.img} name={f.name}/>)
 	return (
 		<div className={cl.section}>

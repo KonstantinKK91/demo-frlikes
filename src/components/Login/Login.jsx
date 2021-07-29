@@ -10,6 +10,7 @@ import {Redirect} from "react-router-dom";
 import {isAuth} from "../../selectors/authSelectors";
 
 class LoginForm extends React.Component {
+
 	onSubmit(formData) {
 		this.props.authLoginThunk(formData.login, formData.password,  formData.checkbox)
 	}
@@ -21,6 +22,7 @@ class LoginForm extends React.Component {
 				<div className={cl.wrapper}>
 					<div className={cl.title}>FrLikes</div>
 					<div className={cl.sign}>SIGN IN</div>
+					{/*form start*/}
 					<form onSubmit={this.props.handleSubmit(this.onSubmit.bind(this))}>
 						<div>
 							<Field component={Input}
@@ -39,12 +41,13 @@ class LoginForm extends React.Component {
 							</Field>
 						</div>
 
+						{/*stopSubmit _error*/}
 						{this.props.error &&
 						<div className={cl.generalError}>
 							<span>{this.props.error}</span>
 						</div>
 						}
-
+						{/*==================*/}
 						<div className={cl.inputCheckbox}>
 							<Field component="input" type="checkbox" name='checkbox'></Field>
 							<label htmlFor="login">Remember me</label>
@@ -52,8 +55,8 @@ class LoginForm extends React.Component {
 						<div>
 							<button className={cl.btn} type="submit">Sign In</button>
 						</div>
-
 					</form>
+					{/*form end*/}
 				</div>
 			</div>
 		)

@@ -1,5 +1,4 @@
 import cl from './Profile.module.css';
-import Image from "./Image/Image";
 import Info from "./Info/Info";
 import FriendsListContainer from "./FriendsList/FriendsListContainer";
 import Posts from "./Posts/Posts";
@@ -10,8 +9,12 @@ function Profile(props) {
 	return (
 		<div className={cl.main__content}>
 			<div className={cl.main__section}>
-				{/*<Image/>*/}
-				<Info updateStatusThunk={props.updateStatusThunk} status={props.status} profile={props.profile}/>
+				<Info updateStatusThunk={props.updateStatusThunk}
+				      updatePhotoThunk={props.updatePhotoThunk}
+				      status={props.status}
+				      profile={props.profile}
+				      isOwnProfile = {props.isOwnProfile}
+				/>
 				<div className={cl.items}>
 					<FriendsListContainer/>
 					<Posts addPost={props.addPost} dataPost={props.dataPost}/>

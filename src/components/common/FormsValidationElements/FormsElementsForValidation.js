@@ -3,6 +3,7 @@ import React from "react";
 import {faExclamationCircle} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
+//======input for from with errors==========================
 export const Input = ({input, meta, ...props}) => {
 	return (
 		<>

@@ -19,6 +19,7 @@ const reducerApp = (state = initialState, action) => {
 }
 export let setInitializedSuccessAC = () => ({type: TYPE_INITIALIZED_SUCCESS});
 
+//Application initialization
 export const initializedThunk = () => {
 	return (dispatch) => {
 		dispatch(authMeApiThunk()).then(()=>{

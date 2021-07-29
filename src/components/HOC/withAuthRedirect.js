@@ -3,6 +3,7 @@ import {Redirect} from "react-router-dom";
 import {connect} from "react-redux";
 import {isAuth} from "../../selectors/authSelectors";
 
+//If the user is not logged in then HOC redirect to the login page
 export const withAuthRedirect = (Component) => {
 	class RedirectComponent extends React.Component {
 		render() {
@@ -12,7 +13,7 @@ export const withAuthRedirect = (Component) => {
 	}
 	let mapStateToPropsForRedirect = (state)=>{
 		return {
-			isAuth:isAuth(state)
+			isAuth:isAuth(state) // true/false
 		}
 	}
 	return connect(mapStateToPropsForRedirect)(RedirectComponent);

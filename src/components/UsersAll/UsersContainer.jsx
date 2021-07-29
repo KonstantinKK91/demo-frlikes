@@ -23,6 +23,7 @@ class usersRequestAPI extends React.Component {
 		this.props.getUser(this.props.countUsers, this.props.currentPage)
 	}
 
+	//When clicked, it will show the next page with users
 	getNextPage = () => {
 		this.props.addNextUsers(this.props.countUsers, this.props.currentPage + 1)
 	}

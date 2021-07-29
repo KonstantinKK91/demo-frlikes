@@ -1,3 +1,4 @@
+//As part of the training, a store was created without using the Redux library
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
 	faCamera, faCogs,

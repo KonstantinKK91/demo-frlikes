@@ -6,6 +6,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
 function Header(props) {
+
 	let logout = () => {
 		props.authLogoutThunk()
 	}
@@ -23,7 +24,7 @@ function Header(props) {
 				? <div>
 					<NavLink to='/profile'>{props.login}</NavLink>
 					<div className={cl.exit}>
-						<button onClick={logout}><FontAwesomeIcon icon={faSignOutAlt}/> Sign Out</button>
+						<button onClick={logout}><FontAwesomeIcon icon={faSignOutAlt}/> Logout</button>
 					</div>
 				</div>
 				: <NavLink to='/login'>Login</NavLink>}

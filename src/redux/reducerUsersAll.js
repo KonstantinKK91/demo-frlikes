@@ -81,6 +81,7 @@ export let showNextPageAC = (users, page) => ({type: TYPE_SHOW_NEXT_PAGE, users,
 export let togglePreloadAC = (isPreload) => ({type: TYPE_TOGGLE_IS_PRELOAD, isPreload});
 export let toggleDisableButtonAC = (disabled, userId) => ({type: TYPE_TOGGLE_IS_DISABLED_BUTTON, disabled, userId});
 
+//Request to get users
 export const getUserThunk = (countUsers, currentPage) => {
 	return async (dispatch) => {
 		dispatch(togglePreloadAC(true));
@@ -91,6 +92,7 @@ export const getUserThunk = (countUsers, currentPage) => {
 	}
 }
 
+// Request to get users from next page
 export const addUsersFromNextPageThunk = (countUsers, currentPage) => {
 	return async (dispatch) => {
 		dispatch(togglePreloadAC(true));
@@ -100,6 +102,7 @@ export const addUsersFromNextPageThunk = (countUsers, currentPage) => {
 	}
 }
 
+//User subscription
 export const followThunk = (userId) => {
 	return async (dispatch) => {
 		dispatch(toggleDisableButtonAC(true, userId));
@@ -109,6 +112,7 @@ export const followThunk = (userId) => {
 	}
 }
 
+//Unsubscribing from a user
 export const unfollowThunk = (userId) => {
 	return async (dispatch) => {
 		dispatch(toggleDisableButtonAC(true, userId));

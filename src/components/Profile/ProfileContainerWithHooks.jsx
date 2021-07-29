@@ -1,7 +1,7 @@
 import * as React from "react";
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {addPostAC, profileAPIThunk, setStatusThunk, updateStatusThunk} from "../../redux/reducerProfile";
+import {addPostAC, profileAPIThunk, setStatusThunk, updateStatusThunk,updatePhotoThunk} from "../../redux/reducerProfile";
 import {withRouter} from "react-router-dom";
 import {withAuthRedirect} from "../HOC/withAuthRedirect";
 import {compose} from "redux";
@@ -11,6 +11,7 @@ import {useEffect} from "react";
 
 function ProfileContainer(props) {
 
+	//Sets user id and calls thunk to get user data by id
 	useEffect(()=>{
 		let userId = props.match.params.userId;//props from withRouter
 		if (!userId) {
@@ -23,10 +24,12 @@ function ProfileContainer(props) {
 
 	return (
 		<Profile updateStatusThunk={props.updateStatusThunk}
+		         updatePhotoThunk={props.updatePhotoThunk}
 		         status={props.status}
 		         profile={props.profile}
 		         addPost={props.addPost}
 		         dataPost={props.dataPost}
+		         isOwnProfile = {!props.match.params.userId}
 		/>)
 }
 
@@ -36,15 +39,18 @@ let mapStateToProps = (state) => {
 		status: statusSelector(state),
 		dataPost:dataPost(state),
 		userId:authUserIdSelector(state),
-		isAuth:isAuth(state)
+		isAuth:isAuth(state),
 	}
 }
+
+// withRouter is used to get data from url
 
 export default compose(connect(mapStateToProps, {
 		profileAPIThunk,
 		setStatusThunk,
 		updateStatusThunk,
-		addPost: addPostAC
+		addPost: addPostAC,
+		updatePhotoThunk
 	}),
 	withAuthRedirect,
 	withRouter)(ProfileContainer)

@@ -1,11 +1,33 @@
 .section__foto {
-	border-right: 10px solid rgb(247, 186, 239);
-	padding: 10px;
-	width: 383px;
+    border-right: 10px solid rgb(247, 186, 239);
+    padding: 10px;
+    width: 383px;
+    position: relative;
 }
 
 .section__foto img {
-	width: 100%;
-	height: 100%;
-	border: 2px solid black;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+}
+
+.inputWrapper input {
+    display: none;
+}
+.section__foto:hover label{
+   display: inline-block;
+}
+.inputWrapper label {
+    background-color: #c8edeb;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    cursor: pointer;
+    padding: 10px;
+    display: none;
+    color: #06063d;
+}
+.inputWrapper label span {
+    display: inline-block;
+    color: #06970b;
 }

@@ -1,7 +1,7 @@
 import cl from "./Items.module.css";
 import {NavLink} from "react-router-dom";
 
-//=====Component create links with avatar+name====================
+//=====Component return links with avatar+name====================
 function DialogsItems(props) {
 	return (
 		<div className={cl.person}>
@@ -10,7 +10,7 @@ function DialogsItems(props) {
 		</div>
 	)
 }
-
+//===============================================================
 function Items(props) {
 	let dialogsMap = props.state.map(d => <DialogsItems name={d.name} id={d.id} img={d.img}/>)
 	return (

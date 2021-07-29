@@ -59,7 +59,7 @@
 .exit {
 	display: none;
 	position: absolute;
-	right: -20px;
+	top: 43px;
 	text-align: center;
 	font-size: 25px;
 	width: 250px;

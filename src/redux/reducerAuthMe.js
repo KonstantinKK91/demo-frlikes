@@ -23,6 +23,7 @@ const reducerAuthMe = (state = initialState, action) => {
 }
 export let setAuthDataAC = (id, login, email, isAuth) => ({type: TYPE_SET_AUTH_DATA, data: {id, login, email, isAuth}});
 
+//Makes a request to authorize the current user
 export const authMeApiThunk = () => {
 	return async (dispatch) => {
 		let response = await authMeAPI.authMeData()
@@ -34,6 +35,7 @@ export const authMeApiThunk = () => {
 	}
 }
 
+//Makes a request to login a user
 export const authLoginThunk = (email, password, rememberMe) => {
 	return async (dispatch) => {
 		let response = await authMeAPI.authLogin(email, password, rememberMe);
@@ -42,6 +44,7 @@ export const authLoginThunk = (email, password, rememberMe) => {
 	}
 }
 
+//Makes a request to logout a user
 export const authLogoutThunk = () => {
 	return async (dispatch) => {
 		let response = await authMeAPI.authLogout();

@@ -1,6 +1,7 @@
 import cl from "./Nav.module.css"
 import {NavLink} from "react-router-dom";
 
+//Returns a block with NavLink
 function Links(props) {
 	return (
 		<li>
@@ -13,7 +14,7 @@ function Links(props) {
 		</li>
 	)
 }
-
+//map state from reducerNav and renders to the Links component
 function Nav(props) {
 	let link = props.store.map(i => <Links url={i.url} icon={i.icon} item={i.item}/>)
 	return (
