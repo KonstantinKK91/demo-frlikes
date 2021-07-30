@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/demo-frlikes/static/css/main.2eb509b6.chunk.css",
-    "main.js": "/demo-frlikes/static/js/main.25d21f0d.chunk.js",
-    "main.js.map": "/demo-frlikes/static/js/main.25d21f0d.chunk.js.map",
-    "runtime-main.js": "/demo-frlikes/static/js/runtime-main.109dbca0.js",
-    "runtime-main.js.map": "/demo-frlikes/static/js/runtime-main.109dbca0.js.map",
-    "static/js/2.f4e6ee81.chunk.js": "/demo-frlikes/static/js/2.f4e6ee81.chunk.js",
-    "static/js/2.f4e6ee81.chunk.js.map": "/demo-frlikes/static/js/2.f4e6ee81.chunk.js.map",
+    "main.css": "/demo-frlikes/static/css/main.2a2d41b2.chunk.css",
+    "main.js": "/demo-frlikes/static/js/main.c04755fe.chunk.js",
+    "main.js.map": "/demo-frlikes/static/js/main.c04755fe.chunk.js.map",
+    "runtime-main.js": "/demo-frlikes/static/js/runtime-main.28dc1df8.js",
+    "runtime-main.js.map": "/demo-frlikes/static/js/runtime-main.28dc1df8.js.map",
+    "static/js/2.27822a0e.chunk.js": "/demo-frlikes/static/js/2.27822a0e.chunk.js",
+    "static/js/2.27822a0e.chunk.js.map": "/demo-frlikes/static/js/2.27822a0e.chunk.js.map",
     "static/css/3.df87f3a4.chunk.css": "/demo-frlikes/static/css/3.df87f3a4.chunk.css",
-    "static/js/3.81cfa285.chunk.js": "/demo-frlikes/static/js/3.81cfa285.chunk.js",
-    "static/js/3.81cfa285.chunk.js.map": "/demo-frlikes/static/js/3.81cfa285.chunk.js.map",
+    "static/js/3.99a32f19.chunk.js": "/demo-frlikes/static/js/3.99a32f19.chunk.js",
+    "static/js/3.99a32f19.chunk.js.map": "/demo-frlikes/static/js/3.99a32f19.chunk.js.map",
     "static/css/4.072b5e42.chunk.css": "/demo-frlikes/static/css/4.072b5e42.chunk.css",
-    "static/js/4.7de6c347.chunk.js": "/demo-frlikes/static/js/4.7de6c347.chunk.js",
-    "static/js/4.7de6c347.chunk.js.map": "/demo-frlikes/static/js/4.7de6c347.chunk.js.map",
+    "static/js/4.4aa13630.chunk.js": "/demo-frlikes/static/js/4.4aa13630.chunk.js",
+    "static/js/4.4aa13630.chunk.js.map": "/demo-frlikes/static/js/4.4aa13630.chunk.js.map",
     "index.html": "/demo-frlikes/index.html",
     "static/css/3.df87f3a4.chunk.css.map": "/demo-frlikes/static/css/3.df87f3a4.chunk.css.map",
     "static/css/4.072b5e42.chunk.css.map": "/demo-frlikes/static/css/4.072b5e42.chunk.css.map",
-    "static/css/main.2eb509b6.chunk.css.map": "/demo-frlikes/static/css/main.2eb509b6.chunk.css.map",
-    "static/js/2.f4e6ee81.chunk.js.LICENSE.txt": "/demo-frlikes/static/js/2.f4e6ee81.chunk.js.LICENSE.txt",
+    "static/css/main.2a2d41b2.chunk.css.map": "/demo-frlikes/static/css/main.2a2d41b2.chunk.css.map",
+    "static/js/2.27822a0e.chunk.js.LICENSE.txt": "/demo-frlikes/static/js/2.27822a0e.chunk.js.LICENSE.txt",
     "static/media/anonym.42e4f7db.jpg": "/demo-frlikes/static/media/anonym.42e4f7db.jpg",
     "static/media/image.058cdaec.jpg": "/demo-frlikes/static/media/image.058cdaec.jpg",
     "static/media/iphoneLoader.02cfd8e6.gif": "/demo-frlikes/static/media/iphoneLoader.02cfd8e6.gif",
@@ -26,9 +26,9 @@
     "static/media/welcome.6e897cd3.png": "/demo-frlikes/static/media/welcome.6e897cd3.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.109dbca0.js",
-    "static/js/2.f4e6ee81.chunk.js",
-    "static/css/main.2eb509b6.chunk.css",
-    "static/js/main.25d21f0d.chunk.js"
+    "static/js/runtime-main.28dc1df8.js",
+    "static/js/2.27822a0e.chunk.js",
+    "static/css/main.2a2d41b2.chunk.css",
+    "static/js/main.c04755fe.chunk.js"
   ]
 }
