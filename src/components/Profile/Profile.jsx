@@ -15,6 +15,7 @@ function Profile(props) {
 				      status={props.status}
 				      profile={props.profile}
 				      isOwnProfile = {props.isOwnProfile}
+				      isSuccess={props.isSuccess}
 				/>
 				<div className={cl.items}>
 					<FriendsListContainer/>

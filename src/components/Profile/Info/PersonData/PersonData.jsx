@@ -11,8 +11,10 @@ function PersonData(props) {
 
 	const [editMode, setEditMode] = useState(false)
 	const onSubmit = formData => {
-	props.updateProfileThunk(formData);
-	setEditMode(false)
+		props.updateProfileThunk(formData);
+		if (props.isSuccess==='success'){
+			setEditMode(false);
+		}
 	}
 
 	return (

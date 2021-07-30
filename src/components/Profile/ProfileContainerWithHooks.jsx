@@ -5,7 +5,7 @@ import {addPostAC, profileAPIThunk, setStatusThunk, updateStatusThunk,updatePhot
 import {withRouter} from "react-router-dom";
 import {withAuthRedirect} from "../HOC/withAuthRedirect";
 import {compose} from "redux";
-import {dataPost, personData, statusSelector} from "../../selectors/profileSelectors";
+import {dataPost, personData, statusSelector,isSuccess} from "../../selectors/profileSelectors";
 import {authUserIdSelector, isAuth} from "../../selectors/authSelectors";
 import {useEffect} from "react";
 
@@ -31,6 +31,7 @@ function ProfileContainer(props) {
 		         addPost={props.addPost}
 		         dataPost={props.dataPost}
 		         isOwnProfile = {!props.match.params.userId}
+		         isSuccess={props.isSuccess}
 		/>)
 }
 
@@ -41,6 +42,7 @@ let mapStateToProps = (state) => {
 		dataPost:dataPost(state),
 		userId:authUserIdSelector(state),
 		isAuth:isAuth(state),
+		isSuccess:isSuccess(state)
 	}
 }
 

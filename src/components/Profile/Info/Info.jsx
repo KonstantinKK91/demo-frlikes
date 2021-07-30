@@ -14,6 +14,7 @@ function Info(props) {
 			            profile={props.profile}
 			            isOwnProfile = {props.isOwnProfile}
 			            updateProfileThunk={props.updateProfileThunk}
+			            isSuccess={props.isSuccess}
 			/>
 		</div>
 	)

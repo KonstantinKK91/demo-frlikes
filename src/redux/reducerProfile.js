@@ -1,14 +1,17 @@
 import {profileAPI} from "../serverAPI(DAL)/api";
+import {stopSubmit} from "redux-form";
 
 const TYPE_ADD_POST = "ADD-POST";
-const TYPE_SET_USERS_PROFILE = 'TYPE-USERS-PROFILE';
+const TYPE_SET_USERS_PROFILE = 'USERS-PROFILE';
 const TYPE_SET_STATUS = 'SET-STATUS';
 const TYPE_SET_PHOTO = 'SET-PHOTO';
+const TYPE_IS_SUCCESS_SUBMIT_PROFILE_DATA = 'SET-IS-SUCCESS';
 
 let initialState = {
 	dataPost: [],
 	personData: null,
-	status: ""
+	status: "",
+	isSuccessSubmit: ''
 }
 
 const reducerProfile = (state = initialState, action) => {
@@ -35,7 +38,12 @@ const reducerProfile = (state = initialState, action) => {
 		case TYPE_SET_PHOTO:
 			return {
 				...state,
-				personData: {...state.personData, photos:action.photos}
+				personData: {...state.personData, photos: action.photos}
+			}
+		case TYPE_IS_SUCCESS_SUBMIT_PROFILE_DATA:
+			return {
+				...state,
+				isSuccessSubmit: action.isSuccess
 			}
 		default:
 			return state;
@@ -46,6 +54,7 @@ export let addPostAC = (post) => ({type: TYPE_ADD_POST, post});
 export let setUsersProfileAC = (profile) => ({type: TYPE_SET_USERS_PROFILE, profile});
 export let setStatusAC = (status) => ({type: TYPE_SET_STATUS, status});
 export let setPhotoAC = (photos) => ({type: TYPE_SET_PHOTO, photos});
+export let setIsSuccessSubmitProfileDataAC = (isSuccess) => ({type: TYPE_IS_SUCCESS_SUBMIT_PROFILE_DATA, isSuccess});
 
 //Request to get user data by id
 export const profileAPIThunk = (userId) => {
@@ -83,10 +92,15 @@ export const updatePhotoThunk = (file) => {
 
 //Request to put profile
 export const updateProfileThunk = (profile) => {
-	return async (dispatch) => {
+	return async (dispatch, getState) => {
+		let userId = getState().auth.id;
 		let response = await profileAPI.updateProfile(profile);
 		if (response.data.resultCode === 0) {
-			debugger;
+			dispatch(profileAPIThunk(userId));
+			dispatch(setIsSuccessSubmitProfileDataAC('success'));
+		} else {
+			dispatch(stopSubmit('editProfile', {_error: response.data.messages[0]}));
+			dispatch(setIsSuccessSubmitProfileDataAC('fail'));
 		}
 	}
 }

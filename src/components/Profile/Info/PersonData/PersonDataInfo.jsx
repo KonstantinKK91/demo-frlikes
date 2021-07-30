@@ -36,11 +36,13 @@ function PersonDataInfo(props) {
 				: <span>{props.profile.lookingForAJobDescription ? props.profile.lookingForAJobDescription : 'no information'}</span>
 			</p>
 			<p>Contacts:{Object.keys(props.profile.contacts).map(key => {
-				return <ContactList contactTitle={key}
-				                    key={key}
-				                    contactResourse={props.profile.contacts[`${key}`]
-					                    ? props.profile.contacts[`${key}`]
-					                    : 'no information'}/>})}
+				if (key !== "mainLink")
+					return <ContactList contactTitle={key}
+					                    key={key}
+					                    contactResourse={props.profile.contacts[`${key}`]
+						                    ? props.profile.contacts[`${key}`]
+						                    : 'no information'}/>
+			})}
 			</p>
 		</div>
 

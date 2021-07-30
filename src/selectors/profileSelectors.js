@@ -8,3 +8,8 @@ export const statusSelector= state => {
 export const dataPost = state => {
 	return state.profilePage.dataPost
 }
+
+export const isSuccess = state => {
+	return state.profilePage.isSuccessSubmit
+}
+
