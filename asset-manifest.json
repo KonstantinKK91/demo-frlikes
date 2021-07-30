@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/demo-frlikes/static/css/main.2a2d41b2.chunk.css",
-    "main.js": "/demo-frlikes/static/js/main.c04755fe.chunk.js",
-    "main.js.map": "/demo-frlikes/static/js/main.c04755fe.chunk.js.map",
+    "main.css": "/demo-frlikes/static/css/main.1955de34.chunk.css",
+    "main.js": "/demo-frlikes/static/js/main.b2aa5229.chunk.js",
+    "main.js.map": "/demo-frlikes/static/js/main.b2aa5229.chunk.js.map",
     "runtime-main.js": "/demo-frlikes/static/js/runtime-main.28dc1df8.js",
     "runtime-main.js.map": "/demo-frlikes/static/js/runtime-main.28dc1df8.js.map",
     "static/js/2.27822a0e.chunk.js": "/demo-frlikes/static/js/2.27822a0e.chunk.js",
@@ -16,7 +16,7 @@
     "index.html": "/demo-frlikes/index.html",
     "static/css/3.df87f3a4.chunk.css.map": "/demo-frlikes/static/css/3.df87f3a4.chunk.css.map",
     "static/css/4.072b5e42.chunk.css.map": "/demo-frlikes/static/css/4.072b5e42.chunk.css.map",
-    "static/css/main.2a2d41b2.chunk.css.map": "/demo-frlikes/static/css/main.2a2d41b2.chunk.css.map",
+    "static/css/main.1955de34.chunk.css.map": "/demo-frlikes/static/css/main.1955de34.chunk.css.map",
     "static/js/2.27822a0e.chunk.js.LICENSE.txt": "/demo-frlikes/static/js/2.27822a0e.chunk.js.LICENSE.txt",
     "static/media/anonym.42e4f7db.jpg": "/demo-frlikes/static/media/anonym.42e4f7db.jpg",
     "static/media/image.058cdaec.jpg": "/demo-frlikes/static/media/image.058cdaec.jpg",
@@ -28,7 +28,7 @@
   "entrypoints": [
     "static/js/runtime-main.28dc1df8.js",
     "static/js/2.27822a0e.chunk.js",
-    "static/css/main.2a2d41b2.chunk.css",
-    "static/js/main.c04755fe.chunk.js"
+    "static/css/main.1955de34.chunk.css",
+    "static/js/main.b2aa5229.chunk.js"
   ]
 }
