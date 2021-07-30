@@ -42,20 +42,20 @@
 }
 
 /*=================PersonDataEditMode style=====================================*/
-form  {
+.formProfile  {
 	padding: 20px;
 	font-size: 16px;
 	color: #580b5d;
 }
-form label {
+.formProfile label {
 	margin-right: 10px;
 }
 
-form div {
+.formProfile div {
 	border-bottom: 1px solid #e134e6;
 	padding: 5px;
 }
-form input  {
+.formProfile input  {
 	border: 1px solid #e134e6;
 	padding: 2px;
 }
