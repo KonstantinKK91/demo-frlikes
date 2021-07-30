@@ -3,7 +3,7 @@ import * as axios from "axios";
 const instance = axios.create({
 	baseURL: 'https://social-network.samuraijs.com/api/1.0/',
 	withCredentials: true,
-	headers: {'API-KEY': 'b5c3e73e-8418-4ceb-b3e6-20bd4dcb3b27'}
+	headers: {'API-KEY': '5559b8ac-99cf-4cda-8d08-14d987b513db'}
 })
 
 //api request: https://social-network.samuraijs.com/api/1.0/security/get-captcha-url
