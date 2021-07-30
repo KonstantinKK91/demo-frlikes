@@ -68,3 +68,29 @@
 	background-color: red;
 	margin-bottom: 10px;
 }
+
+/*=======Captcha=======================================*/
+
+.captcha {
+	margin-top: 15px;
+	text-align: center;
+}
+
+.captchaImg {
+	margin-bottom: 5px;
+	max-width: 100%;
+	max-height: 100%;
+}
+.captchaImg img{
+	margin-bottom: 5px;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+.captchaInput input{
+	border: 1px solid black;
+	width: 200px;
+	height: 30px;
+	padding: 2px;
+	font-size: 17px;
+}
+

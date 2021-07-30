@@ -9,3 +9,6 @@ export const authUserIdSelector = state => {
 	return state.auth.id
 }
 
+export const getCaptchaSelector = state => {
+	return state.auth.captchaUrl
+}

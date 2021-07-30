@@ -7,16 +7,17 @@ import {authLoginThunk} from "../../redux/reducerAuthMe";
 import {Input} from "../common/FormsValidationElements/FormsElementsForValidation";
 import {email, required} from "../../validationForms/validation";
 import {Redirect} from "react-router-dom";
-import {isAuth} from "../../selectors/authSelectors";
+import {isAuth,getCaptchaSelector} from "../../selectors/authSelectors";
 
 class LoginForm extends React.Component {
 
 	onSubmit(formData) {
-		this.props.authLoginThunk(formData.login, formData.password,  formData.checkbox)
+		console.log(formData)
+		this.props.authLoginThunk(formData.login, formData.password, formData.checkbox, formData.captcha)
 	}
 
 	render() {
-		if(this.props.isAuth) return <Redirect to='/profile'/>
+		if (this.props.isAuth) return <Redirect to='/profile'/>
 		return (
 			<div className={cl.form}>
 				<div className={cl.wrapper}>
@@ -55,6 +56,16 @@ class LoginForm extends React.Component {
 						<div>
 							<button className={cl.btn} type="submit">Sign In</button>
 						</div>
+						{/*==================CAPTCHA===================*/}
+						{ this.props.captchaUrl && <div className={cl.captcha}>
+							<div className={cl.captchaImg}>
+								<img src={this.props.captchaUrl} alt=""/>
+							</div>
+							<div className={cl.captchaInput}>
+								<Field component='input' type="text" name='captcha' placeholder='Captcha'></Field>
+							</div>
+						</div>}
+
 					</form>
 					{/*form end*/}
 				</div>
@@ -65,7 +76,8 @@ class LoginForm extends React.Component {
 
 let mapStateToProps = (state) => {
 	return {
-		isAuth:isAuth(state)
+		isAuth: isAuth(state),
+		captchaUrl:getCaptchaSelector(state)
 	}
 }
 
