@@ -27,7 +27,7 @@ const StatusWithHooks = (props) => {
 	}, [props.status])
 
 	return <div>
-		{editStatus
+		{editStatus && props.isOwnProfile
 			? <input onChange={onChangeStatus}
 			         maxLength={300}
 			         autoFocus={true}

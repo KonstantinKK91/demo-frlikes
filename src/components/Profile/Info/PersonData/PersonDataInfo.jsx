@@ -25,7 +25,10 @@ function PersonDataInfo(props) {
 	return <>
 		<div className={cl.section__name}>
 			{props.profile.fullName}
-			<StatusWithHooks updateStatusThunk={props.updateStatusThunk} status={props.status}/>
+			<StatusWithHooks updateStatusThunk={props.updateStatusThunk}
+			                 status={props.status}
+			                 isOwnProfile={props.isOwnProfile}
+			/>
 		</div>
 
 		<div className={cl.section__data}>
