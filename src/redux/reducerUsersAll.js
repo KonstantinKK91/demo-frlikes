@@ -84,44 +84,59 @@ export let toggleDisableButtonAC = (disabled, userId) => ({type: TYPE_TOGGLE_IS_
 //Request to get users
 export const getUserThunk = (countUsers, currentPage) => {
 	return async (dispatch) => {
-		dispatch(togglePreloadAC(true));
-		let response = await usersAPI.getUsers(countUsers, currentPage);
-		dispatch(togglePreloadAC(false));
-		dispatch(setUsersAC(response.data.items));
-		dispatch(setTotalCountUsersAC(response.data.totalCount));
+		try {
+			dispatch(togglePreloadAC(true));
+			let response = await usersAPI.getUsers(countUsers, currentPage);
+			dispatch(togglePreloadAC(false));
+			dispatch(setUsersAC(response.data.items));
+			dispatch(setTotalCountUsersAC(response.data.totalCount));
+		} catch (e) {
+			window.reject(e);
+		}
 	}
 }
 
 // Request to get users from next page
 export const addUsersFromNextPageThunk = (countUsers, currentPage) => {
 	return async (dispatch) => {
-		dispatch(togglePreloadAC(true));
-		let response = await usersAPI.getUsers(countUsers, currentPage);
-		dispatch(togglePreloadAC(false));
-		dispatch(showNextPageAC(response.data.items, currentPage));
+		try {
+			dispatch(togglePreloadAC(true));
+			let response = await usersAPI.getUsers(countUsers, currentPage);
+			dispatch(togglePreloadAC(false));
+			dispatch(showNextPageAC(response.data.items, currentPage));
+		} catch (e) {
+			window.reject(e);
+		}
 	}
 }
 
 //User subscription
 export const followThunk = (userId) => {
 	return async (dispatch) => {
-		dispatch(toggleDisableButtonAC(true, userId));
-		let response = await followedAPI.userFollow(userId);
-		if (response.data.resultCode == 0) dispatch(addUserAC(userId));
-		dispatch(toggleDisableButtonAC(false, userId));
+		try {
+			dispatch(toggleDisableButtonAC(true, userId));
+			let response = await followedAPI.userFollow(userId);
+			if (response.data.resultCode == 0) dispatch(addUserAC(userId));
+			dispatch(toggleDisableButtonAC(false, userId));
+		} catch (e) {
+			window.reject(e);
+		}
 	}
 }
 
 //Unsubscribing from a user
 export const unfollowThunk = (userId) => {
 	return async (dispatch) => {
-		dispatch(toggleDisableButtonAC(true, userId));
-		let response = await followedAPI.userUnfollow(userId);
-		if (response.data.resultCode == 0) dispatch(removeUserAC(userId));
-		dispatch(toggleDisableButtonAC(false, userId));
+		try {
+			dispatch(toggleDisableButtonAC(true, userId));
+			let response = await followedAPI.userUnfollow(userId);
+			if (response.data.resultCode == 0) dispatch(removeUserAC(userId));
+			dispatch(toggleDisableButtonAC(false, userId));
+		} catch (e) {
+			window.reject(e);
+		}
 	}
 }
-
 
 export default reducerUsersAll;
 

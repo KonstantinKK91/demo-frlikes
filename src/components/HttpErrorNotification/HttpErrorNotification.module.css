@@ -1,0 +1,40 @@
+.wrapper {
+	background-color: #cdadad;
+	width: 400px;
+	height: 200px;
+	position: fixed;
+	top: 25px;
+	right: 45vw;
+	z-index: 1;
+	border: 2px solid black;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: red;
+	padding: 10px;
+	border-bottom:2px solid black;
+	margin-bottom: 30px;
+}
+
+.container span{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.closeBtn button{
+	background-color: red;
+	font-size: 20px;
+}
+
+.closeBtn button :hover {
+	font-size:23px ;
+}
+
+.textError {
+	font-size: 30px;
+
+	text-align: center;
+}

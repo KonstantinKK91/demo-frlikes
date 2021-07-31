@@ -59,33 +59,49 @@ export let setIsSuccessSubmitProfileDataAC = (isSuccess) => ({type: TYPE_IS_SUCC
 //Request to get user data by id
 export const profileAPIThunk = (userId) => {
 	return async (dispatch) => {
-		let response = await profileAPI.getProfileData(userId);
-		dispatch(setUsersProfileAC(response.data));
+		try {
+			let response = await profileAPI.getProfileData(userId);
+			dispatch(setUsersProfileAC(response.data));
+		} catch (e) {
+			window.reject(e);
+		}
 	}
 }
 
 //Request to get user status by id
 export const setStatusThunk = (userId) => {
 	return async (dispatch) => {
-		let response = await profileAPI.getStatus(userId);
-		dispatch(setStatusAC(response.data));
+		try {
+			let response = await profileAPI.getStatus(userId);
+			dispatch(setStatusAC(response.data));
+		} catch (e) {
+			window.reject(e);
+		}
 	}
 }
 
 //Request to put user status
 export const updateStatusThunk = (status) => {
 	return async (dispatch) => {
-		let response = await profileAPI.updateStatus(status);
-		if (response.data.resultCode === 0) dispatch(setStatusAC(status));
+		try {
+			let response = await profileAPI.updateStatus(status);
+			if (response.data.resultCode === 0) dispatch(setStatusAC(status));
+		} catch (e) {
+			window.reject(e);
+		}
 	}
 }
 
 //Request to put user photo
 export const updatePhotoThunk = (file) => {
 	return async (dispatch) => {
-		let response = await profileAPI.updatePhoto(file);
-		if (response.data.resultCode === 0) {
-			dispatch(setPhotoAC(response.data.data.photos));
+		try {
+			let response = await profileAPI.updatePhoto(file);
+			if (response.data.resultCode === 0) {
+				dispatch(setPhotoAC(response.data.data.photos));
+			}
+		} catch (e) {
+			window.reject(e);
 		}
 	}
 }
@@ -93,14 +109,18 @@ export const updatePhotoThunk = (file) => {
 //Request to put profile
 export const updateProfileThunk = (profile) => {
 	return async (dispatch, getState) => {
-		let userId = getState().auth.id;
-		let response = await profileAPI.updateProfile(profile);
-		if (response.data.resultCode === 0) {
-			dispatch(profileAPIThunk(userId));
-			dispatch(setIsSuccessSubmitProfileDataAC('success'));
-		} else {
-			dispatch(stopSubmit('editProfile', {_error: response.data.messages[0]}));
-			dispatch(setIsSuccessSubmitProfileDataAC('fail'));
+		try {
+			let userId = getState().auth.id;
+			let response = await profileAPI.updateProfile(profile);
+			if (response.data.resultCode === 0) {
+				dispatch(profileAPIThunk(userId));
+				dispatch(setIsSuccessSubmitProfileDataAC('success'));
+			} else {
+				dispatch(stopSubmit('editProfile', {_error: response.data.messages[0]}));
+				dispatch(setIsSuccessSubmitProfileDataAC('fail'));
+			}
+		} catch (e) {
+			window.reject(e);
 		}
 	}
 }

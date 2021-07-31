@@ -13,18 +13,32 @@ import {Route, Switch, withRouter} from "react-router-dom";
 import ProfileContainer from "./components/Profile/ProfileContainerWithHooks";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
+import ErrorPage from "./components/Error404/Error";
+import HttpErrorNotification from "./components/HttpErrorNotification/HttpErrorNotification";
 import * as React from "react";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import PreloaderTwo from "./components/common/PreloaderTwo/PreloaderTwo";
 import {initializedThunk} from "./redux/reducerApp";
-import {Suspense, useEffect} from "react";
+import {Suspense, useEffect, useState} from "react";
 import {withSuspense} from "./components/HOC/withSuspense";
 
 const UsersContainer = React.lazy(() => import('./components/UsersAll/UsersContainer'));
 const Dialogs = React.lazy(() => import('./components/Dialogs/Dialogs'));
 
 function App(props) {
+
+	let [error, setError] = useState('');
+
+	//Add the reject method to the window object
+	window.__proto__.reject = (e)=>{
+		setError(`${e}`);
+	}
+
+	const closeWindowError = () => {
+		setError('');
+	}
+
 	useEffect(() => {
 		props.initializedThunk();
 	}, [props.initializedThunk()])
@@ -32,9 +46,11 @@ function App(props) {
 	if (!props.isInitialized) {
 		return <PreloaderTwo/>
 	}
+
 	return (
 		<div className="app-wrapper">
 			<HeaderContainer/>
+			{error && <HttpErrorNotification closeWindowError={closeWindowError} error={error}/>}
 			<div className="main">
 				<NavContainer/>
 				<Switch>
@@ -47,17 +63,18 @@ function App(props) {
 					<Route path='/news' render={() => <News/>}/>
 					<Route path='/music' render={() => <Music/>}/>
 					<Route path='/setting' render={() => <Setting/>}/>
+					<Route path='*' render={() => <ErrorPage/>}/>
 					{/*<Route path='/photos' render={Photos}/>*/}
 				</Switch>
 			</div>
 			<Footer/>
 		</div>
-	);
+	)
 }
 
 let mapStateToProps = state => {
 	return {
-		isInitialized: state.app.isInitialized
+		isInitialized: state.app.isInitialized,
 	}
 }
 

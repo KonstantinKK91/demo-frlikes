@@ -3,7 +3,7 @@ import {authMeApiThunk} from "./reducerAuthMe";
 const TYPE_INITIALIZED_SUCCESS = 'INITIALIZED-SUCCESS';
 
 let initialState = {
-	isInitialized:false
+	isInitialized: false,
 }
 
 const reducerApp = (state = initialState, action) => {
@@ -22,9 +22,13 @@ export let setInitializedSuccessAC = () => ({type: TYPE_INITIALIZED_SUCCESS});
 //Application initialization
 export const initializedThunk = () => {
 	return (dispatch) => {
-		dispatch(authMeApiThunk()).then(()=>{
-			dispatch(setInitializedSuccessAC());
-		})
+		try {
+			dispatch(authMeApiThunk()).then(()=>{
+				dispatch(setInitializedSuccessAC());
+			})
+		}catch (e) {
+			window.reject(e);
+		}
 	}
 }
 

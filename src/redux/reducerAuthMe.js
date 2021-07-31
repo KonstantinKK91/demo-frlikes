@@ -36,40 +36,56 @@ export let setCaptchaUrlAC = (url) => ({type: TYPE_SET_CAPTCHA_URL, url});
 //Makes a request to authorize the current user
 export const authMeApiThunk = () => {
 	return async (dispatch) => {
-		let response = await authMeAPI.authMeData()
-		if (response.data.resultCode === 0) {
-			let {id, login, email} = response.data.data;
-			dispatch(setAuthDataAC(id, login, email, true));
+		try {
+			let response = await authMeAPI.authMeData()
+			if (response.data.resultCode === 0) {
+				let {id, login, email} = response.data.data;
+				dispatch(setAuthDataAC(id, login, email, true));
+			}
+			return response;
+		}catch (e) {
+			window.reject(e);
 		}
-		return response;
 	}
 }
 
 //Makes a request to login a user
-export const authLoginThunk = (email, password, rememberMe,captcha) => {
+export const authLoginThunk = (email, password, rememberMe, captcha) => {
 	return async (dispatch) => {
-		let response = await authMeAPI.authLogin(email, password, rememberMe,captcha);
-		if (response.data.resultCode === 0) dispatch(authMeApiThunk());
-		else if (response.data.resultCode === 10) {
-			dispatch(getCaptchaThunk())
-		} else dispatch(stopSubmit('login', {_error: response.data.messages[0]}));
+		try {
+			let response = await authMeAPI.authLogin(email, password, rememberMe, captcha);
+			if (response.data.resultCode === 0) dispatch(authMeApiThunk());
+			else if (response.data.resultCode === 10) {
+				dispatch(getCaptchaThunk())
+			} else dispatch(stopSubmit('login', {_error: response.data.messages[0]}));
+		}catch (e) {
+			window.reject(e);
+		}
 	}
 }
 
 //Makes a request to logout a user
 export const authLogoutThunk = () => {
 	return async (dispatch) => {
-		let response = await authMeAPI.authLogout();
-		if (response.data.resultCode === 0) dispatch(setAuthDataAC(null, null, null, false));
+		try {
+			let response = await authMeAPI.authLogout();
+			if (response.data.resultCode === 0) dispatch(setAuthDataAC(null, null, null, false));
+		}catch (e) {
+			window.reject(e);
+		}
 	}
 }
 
 //Captcha request
 export const getCaptchaThunk = () => {
 	return async (dispatch) => {
-		let response = await securityAPI.getCaptcha();
-		dispatch(setCaptchaUrlAC(response.data.url));
-		dispatch(stopSubmit('login', {_error:`Invalid username or password` }));
+		try {
+			let response = await securityAPI.getCaptcha();
+			dispatch(setCaptchaUrlAC(response.data.url));
+			dispatch(stopSubmit('login', {_error: `Invalid username or password`}));
+		}catch (e) {
+			window.reject(e);
+		}
 	}
 }
 
